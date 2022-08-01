@@ -10,22 +10,22 @@
 (require 'company)
 (require 'cl-lib)
 
+(defvar company-aspell-command "aspell")
+(defvar company-aspell-args "-a")
+
 (defgroup company-aspell nil
   "Completion backend using Aspell."
   :group 'company)
 
 (defun company-aspell--lookup-words (word &optional lookup-dict)
-  (message word)
   (let* ((aspell-command
-          (concat "echo '" word "' | aspell -a"))
+          (concat "echo '" word "' | " company-aspell-command " " company-aspell-args))
          (results
           (split-string (shell-command-to-string aspell-command) ",")))
     (setf (nth 0 results)
-          (nth 0
-               (last (split-string (nth 0 results) " "))))
+          (nth 0 (last (split-string (nth 0 results)))))
     (let ((trimmed-results
            (cl-map 'list 'string-trim results)))
-      (print trimmed-results)
       trimmed-results)))
 
 ;;;###autoload
