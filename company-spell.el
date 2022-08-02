@@ -34,7 +34,7 @@
   (interactive (list 'interactive))
   (cl-case command
     (interactive (company-begin-backend 'company-spell))
-    (prefix (when (bound-and-true-p flyspell-mode)
+    (prefix (when (derived-mode-p 'text-mode)
               (company-grab-symbol)))
     (candidates (company-spell--lookup-words arg))
     (kind 'text)
