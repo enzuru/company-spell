@@ -20,7 +20,7 @@
 (defun company-spell--lookup-words (word &optional lookup-dict)
   (let* ((spell-command
           (format "echo \"%s\" | %s %s"
-                  (regexp-quote word)
+                  word
                   company-spell-command
                   company-spell-args))
          (results
