@@ -1,29 +1,26 @@
 # company-spell
 
-A `company-mode` backend for any CLI spellchecker. Unlike `company-ispell` which requires a plaintext dictionary, this just pipes results from a spellchecking command on your computer. I have not run into any notable performance issues with this approach.
+An Emacs `company-mode` backend for any terminal spellchecker. Unlike `company-ispell` which requires a plaintext dictionary, this just pipes results from a spellchecking command on your computer into `company-mode`. I have not run into any notable performance issues with this approach.
 
 ## Instructions
 
-1. Install `aspell` for your *nix machine
-2. Clone the library and load it like this:
+1. Ensure a terminal spellchecker is installed (`aspell`, `hunspell`, `ispell`, etc)
+2. Clone this repo and load it like this:
 ```
-(add-to-list 'load-path "~/.emacs.d/local/company-aspell")
-(require 'company-aspell)
+(add-to-list 'load-path "~/.emacs.d/local/company-spell")
+(require 'company-spell)
 ```
-4. Once loaded:
+3. Once loaded:
 ```
-(add-to-list 'company-backends  'company-aspell t)
+(add-to-list 'company-backends  'company-spell t)
 ```
-5. Uses `aspell` by default, but you can set `hunspell` or `ispell` easily:
+4. Optionally, set a spellchecker that isn't the default value of `aspell`:
 ```
 (setf company-aspell-command "hunspell")
 ;; or
 (setf company-aspell-command "ispell")
 ```
-6. You can modify the commands sent to the spellchecker like this:
+5. You can further customize your results by setting custom args (only `-a` is enabled by default). For instance, search via "soundslike":
 ```
-(setf company-aspell-args "-a")
+(setf company-spell-args "-a soundslike")
 ```
-
-
-Now `company-aspell` will run on any buffer that has enabled both `company-mode` and `flyspell-mode`.
