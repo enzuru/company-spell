@@ -19,14 +19,19 @@
 
 (defun company-spell--lookup-words (word &optional lookup-dict)
   (let* ((spell-command
-          (concat "echo '" word "' | " company-spell-command " " company-spell-args))
+          (format "echo \"%s\" | %s %s"
+                  (regexp-quote word)
+                  company-spell-command
+                  company-spell-args))
          (results
-          (split-string (shell-command-to-string spell-command) ",")))
+          (split-string
+           (shell-command-to-string spell-command) ",")))
     (setf (nth 0 results)
           (nth 0 (last (split-string (nth 0 results)))))
     (let ((trimmed-results
            (cl-map 'list 'string-trim results)))
-      trimmed-results)))
+      (if (not (string-equal (nth 0 trimmed-results) "*"))
+          trimmed-results '()))))
 
 ;;;###autoload
 (defun company-spell (command &optional arg &rest ignored)
