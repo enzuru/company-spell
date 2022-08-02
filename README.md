@@ -1,7 +1,7 @@
 # company-spell
-![A dropdown selection in Emacs with word suggestions](doc/example.gif)
-
 [![GNU Emacs](https://img.shields.io/static/v1?logo=gnuemacs&logoColor=fafafa&label=Made%20for&message=GNU%20Emacs&color=7F5AB6&style=flat)](https://www.gnu.org/software/emacs/)
+
+![A dropdown selection in Emacs with word suggestions](doc/example.gif)
 
 An Emacs `company-mode` backend for any terminal spellchecker. Unlike `company-ispell` which requires a plaintext dictionary, this just pipes results from a spellchecking command on your computer into `company-mode`. I have not run into any notable performance issues with this approach.
 
