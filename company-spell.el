@@ -1,9 +1,7 @@
 ;;; company-spell.el --- company-mode completion for most major terminal spellcheckers
 
-;; Author: Ahmed Khanzada
-
-;;; Commentary:
-;;
+;; Copyright (C) Salma Karama, LLC
+;; SPDX-License-Identifier: GPL-3.0
 
 ;;; Code:
 
