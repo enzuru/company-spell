@@ -7,7 +7,7 @@
 
 ;; Package-Version 1.0.0-git
 ;; Package-Requires: (
-;;     (emacs "24.3")
+;;     (emacs "24.4")
 ;;     (cl-lib "1.0"))
 
 ;; SPDX-License-Identifier: GPL-3.0
