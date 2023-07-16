@@ -1,7 +1,21 @@
-;;; company-spell.el --- company-mode completion for most major terminal spellcheckers
+;; company-spell.el --- Autocompleting spelling for Company  -*- lexical-binding:t; coding:utf-8 -*-
 
 ;; Copyright (C) enzu.ru
+
+;; Homepage: https://enzu.ru
+;; Keywords: wp
+
+;; Package-Version 1.0.0-git
+;; Package-Requires: (
+;;     (emacs "24.3")
+;;     (cl-lib "1.0")
+;;     (company "0.9.13"))
+
 ;; SPDX-License-Identifier: GPL-3.0
+
+;;; Commentary:
+
+;; A simple company backend that lets you use a terminal spellchecker
 
 ;;; Code:
 
@@ -9,18 +23,19 @@
 (require 'cl-lib)
 
 (defcustom company-spell-command "aspell"
-  "Spelling command. Usually a string specifying aspell, hunspell, or ispell"
+  "Usually a command string specifying aspell, hunspell, or ispell."
   :type 'function)
 
 (defcustom company-spell-args "-a"
-  "Args for spelling command"
+  "Args for the spelling command string; also a string."
   :type 'function)
 
 (defgroup company-spell nil
-  "Completion backend using a terminal spellchecker of your choice"
+  "Completion backend using a terminal spellchecker of your choice."
   :group 'company)
 
 (defun company-spell--lookup-words (word &optional lookup-dict)
+  "Use a terminal spellchecker to lookup words."
   (let* ((spell-command
           (format "echo \"%s\" | %s %s"
                   word
@@ -37,7 +52,7 @@
 
 ;;;###autoload
 (defun company-spell (command &optional arg &rest ignored)
-  "company-mode completion backend using Spell."
+  "Spellchecking from your terminal to Company."
   (interactive (list 'interactive))
   (cl-case command
     (interactive (company-begin-backend 'company-spell))
@@ -48,3 +63,5 @@
     (sorted t)))
 
 (provide 'company-spell)
+
+;;; company-spell.el ends here
