@@ -8,8 +8,13 @@
 (require 'company)
 (require 'cl-lib)
 
-(defvar company-spell-command "aspell")
-(defvar company-spell-args "-a")
+(defcustom company-spell-command "aspell"
+  "Spelling command. Usually a string specifying aspell, hunspell, or ispell"
+  :type 'function)
+
+(defcustom company-spell-args "-a"
+  "Args for spelling command"
+  :type 'function)
 
 (defgroup company-spell nil
   "Completion backend using a terminal spellchecker of your choice"
@@ -26,8 +31,7 @@
            (shell-command-to-string spell-command) ",")))
     (setf (nth 0 results)
           (nth 0 (last (split-string (nth 0 results)))))
-    (let ((trimmed-results
-           (cl-map 'list 'string-trim results)))
+    (let ((trimmed-results (cl-map 'list 'string-trim results)))
       (if (not (string-equal (nth 0 trimmed-results) "*"))
           trimmed-results '()))))
 
