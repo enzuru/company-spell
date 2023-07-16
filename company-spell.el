@@ -21,17 +21,19 @@
 (require 'company)
 (require 'cl-lib)
 
+(defgroup company-spell nil
+  "Completion backend using a terminal spellchecker of your choice."
+  :group 'company)
+
 (defcustom company-spell-command "aspell"
   "Usually a command string specifying aspell, hunspell, or ispell."
+  :group 'company-spell
   :type 'function)
 
 (defcustom company-spell-args "-a"
   "Args for the spelling command string; also a string."
+  :group 'company-spell
   :type 'function)
-
-(defgroup company-spell nil
-  "Completion backend using a terminal spellchecker of your choice."
-  :group 'company)
 
 (defun company-spell--lookup-words (word &optional lookup-dict)
   "Use a terminal spellchecker to lookup words."
