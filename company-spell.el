@@ -47,7 +47,7 @@
            (shell-command-to-string spell-command) ",")))
     (setf (nth 0 results)
           (nth 0 (last (split-string (nth 0 results)))))
-    (let ((trimmed-results (cl-map 'list 'string-trim results)))
+    (let ((trimmed-results (cl-map 'list #'string-trim results)))
       (if (not (string-equal (nth 0 trimmed-results) "*"))
           trimmed-results '()))))
 
