@@ -35,7 +35,7 @@
   :group 'company-spell
   :type 'function)
 
-(defun company-spell--lookup-words (word &optional lookup-dict)
+(defun company-spell--lookup-words (word &optional)
   "Use a terminal spellchecker to lookup words."
   (let* ((spell-command
           (format "echo \"%s\" | %s %s"
