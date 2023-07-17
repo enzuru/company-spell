@@ -33,8 +33,8 @@
   :group 'company-spell
   :type 'function)
 
-(defun company-spell--lookup-words (word &optional)
-  "Use a terminal spellchecker to lookup words."
+(defun company-spell--lookup-words (word)
+  "Use a terminal spellchecker to lookup WORD."
   (let* ((spell-command
           (format "echo \"%s\" | %s %s"
                   word
@@ -50,8 +50,8 @@
           trimmed-results '()))))
 
 ;;;###autoload
-(defun company-spell (command &optional arg &rest ignored)
-  "Spellchecking from your terminal to Company."
+(defun company-spell (command &optional arg)
+  "Run COMMAND and possibly ARG to accomplish spellchecking."
   (interactive (list 'interactive))
   (cl-case command
     (interactive (company-begin-backend 'company-spell))
