@@ -1,4 +1,4 @@
-;; company-spell.el --- Autocompleting spelling for Company  -*- lexical-binding:t; coding:utf-8 -*-
+;;; company-spell.el --- Autocompleting spelling for Company  -*- lexical-binding:t; coding:utf-8 -*-
 
 ;; Copyright (C) enzu.ru
 
