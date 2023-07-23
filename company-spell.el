@@ -50,7 +50,7 @@
           trimmed-results '()))))
 
 ;;;###autoload
-(defun company-spell (command &optional arg &rest ignored)
+(defun company-spell (command &optional arg &rest _ignored)
   "Run COMMAND and possibly ARG to accomplish spellchecking."
   (interactive (list 'interactive))
   (cl-case command
