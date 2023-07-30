@@ -21,9 +21,9 @@ It will automatically run on any buffer that has a major mode derived from `text
 ```
 4. Optionally, set a spellchecker that isn't the default value of `aspell`:
 ```
-(setf company-aspell-command "hunspell")
+(setf company-spell-command "hunspell")
 ;; or
-(setf company-aspell-command "ispell")
+(setf company-spell-command "ispell")
 ```
 5. You can further customize your results by setting custom args (only `-a` is enabled by default). For instance, search via "soundslike":
 ```
