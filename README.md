@@ -1,5 +1,6 @@
 # company-spell
 [![GNU Emacs](https://img.shields.io/static/v1?logo=gnuemacs&logoColor=fafafa&label=Made%20for&message=GNU%20Emacs&color=7F5AB6&style=flat)](https://www.gnu.org/software/emacs/)
+[![MELPA](https://melpa.org/packages/company-spell-badge.svg)](https://melpa.org/#/company-spell)
 
 ![A dropdown selection in Emacs with word suggestions](doc/example.gif)
 
