@@ -4,7 +4,7 @@
 
 ![A dropdown selection in Emacs with word suggestions](doc/example.gif)
 
-An Emacs `company-mode` backend for any terminal spellchecker. Unlike `company-ispell` which asks for a plaintext dictionary to be specified for ispell, this just pipes results from any spellchecking command on your computer into `company-mode`. I have not run into any notable performance issues with this approach.
+An Emacs `company-mode` backend for any terminal spellchecker. Unlike `company-ispell` which asks for a plaintext dictionary to be specified for ispell, this just pipes results from any spellchecking program on your computer into `company-mode` with no questions asked! I have not run into any notable performance issues with this approach.
 
 It will automatically run on any buffer that has a major mode derived from `text-mode`, which includes almost all modes meant for human writing.
 
