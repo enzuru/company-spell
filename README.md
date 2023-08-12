@@ -10,7 +10,7 @@ To get a sense of the difference, compare company-spell's minimalist [spellcheck
 
 This minimalist approach that keeps less machinery between you and your spellchecker, and allows you to cultivate your in buffer spellchecking with a different approach than spellchecking elsewhere.
 
-I have not discovered any notable performance issues with this approach. aspell is the default because I find that it returns the best results.
+I have not discovered any notable performance issues with this approach, and in fact, I have anecdotally found it to be faster than company-spell (no promises though!). aspell is the default because I find that it returns the best results.
 
 It will automatically run on any buffer that has a major mode derived from `text-mode`, which includes almost all modes meant for human writing.
 
