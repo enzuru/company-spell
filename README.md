@@ -18,7 +18,7 @@ Ensure a terminal spellchecker is installed (`aspell`, `hunspell`, `ispell`, etc
 
 #### package-install
 
-```
+```elisp
 M-x package-install company-spell
 (push 'company-spell company-backends)
 ```
@@ -34,13 +34,13 @@ M-x package-install company-spell
 ### Configuration
 
 Optionally, set a spellchecker that isn't the default value of `aspell`:
-```
+```elisp
 (setf company-spell-command "hunspell")
 ;; or
 (setf company-spell-command "ispell")
 ```
 
 You can further customize your results by setting custom args (only `-a` is enabled by default). For instance, search via "soundslike":
-```
+```elisp
 (setf company-spell-args "-a soundslike")
 ```
