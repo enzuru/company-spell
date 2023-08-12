@@ -6,7 +6,9 @@
 
 `company-spell` directly uses your spellcheck program with no questions asked, and is compatible with ispell, aspell, and hunspell. Unlike `company-ispell`, this works outside of the [default Emacs ispell machinery](https://www.gnu.org/software/emacs/manual/html_node/emacs/Spelling.html).
 
-This is a more minimalist approach that keeps less machinery between you and your spellchecker, and allows you to cultivate your in buffer spellchecking with a different approach than spellchecking elsewhere.
+To get a sense of the difference, compare company-spell's minimalist [spellchecking function](https://github.com/enzuru/company-spell/blob/4866da9780ed8260734ec8f7fb3054a48c2bf297/company-spell.el#L36) with [that of Emacs ispell](https://github.com/emacs-mirror/emacs/blob/7055fd8e43eebab5ad27c665a941d0612da7f173/lisp/textmodes/ispell.el#L2507).
+
+This minimalist approach that keeps less machinery between you and your spellchecker, and allows you to cultivate your in buffer spellchecking with a different approach than spellchecking elsewhere.
 
 I have not discovered any notable performance issues with this approach. aspell is the default because I find that it returns the best results.
 
