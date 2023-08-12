@@ -4,9 +4,11 @@
 
 ![A dropdown selection in Emacs with word suggestions](doc/example.gif)
 
-Emacs in buffer spellchecking that “just works”!
+`company-spell` directly uses your spellcheck program with no questions asked, and is compatible with ispell, aspell, and hunspell. Unlike `company-ispell`, this works outside of the [default Emacs ispell machinery](https://www.gnu.org/software/emacs/manual/html_node/emacs/Spelling.html).
 
-`company-spell` is an Emacs `company-mode` backend for any terminal spellchecker. Unlike `company-ispell` which asks for a plaintext dictionary to be specified for ispell, `company-spell` directly uses your spellcheck program with no questions asked, and is compatible with ispell, aspell, and hunspell. I have not discovered any notable performance issues with this approach. aspell is the default because I find that it returns the best results.
+This is a more minimalist approach that keeps less machinery between you and your spellchecker, and allows you to cultivate your in buffer spellchecking with a different approach than spellchecking elsewhere.
+
+I have not discovered any notable performance issues with this approach. aspell is the default because I find that it returns the best results.
 
 It will automatically run on any buffer that has a major mode derived from `text-mode`, which includes almost all modes meant for human writing.
 
