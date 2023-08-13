@@ -6,13 +6,13 @@
 
 **If you are happy with company-ispell, this package is not for you, and you are encouraged to stick with company-ispell.**
 
-`company-spell` is a hackable minimalist framework for spellchecking. 
+`company-spell` is a hackable minimalist framework for spellchecking.
 
 `company-spell` directly uses your spellcheck program with no questions asked, and is compatible with ispell, aspell, and hunspell. Unlike `company-ispell`, this works outside of the [default Emacs ispell machinery](https://www.gnu.org/software/emacs/manual/html_node/emacs/Spelling.html).
 
-To get a sense of the difference, compare company-spell's minimalist [spellchecking function](https://github.com/enzuru/company-spell/blob/4866da9780ed8260734ec8f7fb3054a48c2bf297/company-spell.el#L36) with [that of Emacs ispell](https://github.com/emacs-mirror/emacs/blob/7055fd8e43eebab5ad27c665a941d0612da7f173/lisp/textmodes/ispell.el#L2507).
+There are three variables you can modify to adjust how in buffer spellchecking works. This minimalist approach that keeps less machinery between you and your spellchecker, and allows you to cultivate your in buffer spellchecking with a different approach than spellchecking elsewhere.
 
-This minimalist approach that keeps less machinery between you and your spellchecker, and allows you to cultivate your in buffer spellchecking with a different approach than spellchecking elsewhere.
+Due to this minimalist approach, multilingual support is probably not very good, as it currently does not track which language you are requesting spellcehcking for.
 
 I have not discovered any notable performance issues with this approach, and in fact, I have anecdotally found it to be faster than company-spell (no promises though!). aspell is the default because I find that it returns the best results.
 
@@ -59,9 +59,9 @@ You can further customize your results by setting custom args (only `-a` is enab
 (setf company-spell-args "-a soundslike")
 ```
 
-#### company-spell-filter
+#### company-spell-function
 
-You might want to setup your own filter. This is a simple function that takes in the results of your spellcheck command with its arguments, and turns it into a list for Company.
+You might want to setup your own function. This is a simple function that calls your spellcheck command with your arguments, and turns it into a list for Company.
 ```elisp
 (setf company-spell-filter #'my-filtering-function)
 ```
