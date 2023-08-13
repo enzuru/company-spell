@@ -29,7 +29,7 @@
   :type 'string)
 
 (defcustom company-spell-function #'company-spell-lookup-words
-  "The function to call the spellchecker and turn the results into a list"
+  "The function to call the spellchecker and turn the results into a list."
   :group 'company-spell
   :type 'function)
 
