@@ -34,7 +34,7 @@
   :type 'function)
 
 (defcustom company-spell-args "-a"
-  "Args for the spelling command string; also a string."
+  "A string of args to pass to your spellchecker."
   :group 'company-spell
   :type 'string)
 
