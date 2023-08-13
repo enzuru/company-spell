@@ -26,14 +26,19 @@
 (defcustom company-spell-command "aspell"
   "Usually a command string specifying aspell, hunspell, or ispell."
   :group 'company-spell
+  :type 'string)
+
+(defcustom company-spell-function #'company-spell-lookup-words
+  "The function to call the spellchecker and turn the results into a list"
+  :group 'company-spell
   :type 'function)
 
 (defcustom company-spell-args "-a"
   "Args for the spelling command string; also a string."
   :group 'company-spell
-  :type 'function)
+  :type 'string)
 
-(defun company-spell--lookup-words (word)
+(defun company-spell-lookup-words (word)
   "Use a terminal spellchecker to lookup WORD."
   (let* ((spell-command
           (format "echo \"%s\" | %s %s"
@@ -57,7 +62,7 @@
     (interactive (company-begin-backend 'company-spell))
     (prefix (when (derived-mode-p 'text-mode)
               (company-grab-symbol)))
-    (candidates (company-spell--lookup-words arg))
+    (candidates (funcall company-spell-function arg))
     (kind 'text)
     (sorted t)))
 
