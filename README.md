@@ -63,5 +63,5 @@ You can further customize your results by setting custom args (only `-a` is enab
 
 You might want to setup your own function. This is a simple function that calls your spellcheck command with your arguments, and turns it into a list for Company.
 ```elisp
-(setf company-spell-filter #'my-filtering-function)
+(setf company-spell-function #'my-custom-function)
 ```
