@@ -4,9 +4,11 @@
 
 ![A dropdown selection in Emacs with word suggestions](doc/example.gif)
 
-`company-spell` directly uses your spellcheck program with no questions asked, and is compatible with ispell, aspell, and hunspell. Unlike `company-ispell`, this works outside of the [default Emacs ispell machinery](https://www.gnu.org/software/emacs/manual/html_node/emacs/Spelling.html).
+**If you are happy with company-ispell, this package is not for you, and you are encouraged to stick with company-ispell.**
 
-If you are happy with company-ispell, this package is not for you, and you are encouraged to stick with company-ispell.
+`company-spell` is a hackable minimalist framework for spellchecking. 
+
+`company-spell` directly uses your spellcheck program with no questions asked, and is compatible with ispell, aspell, and hunspell. Unlike `company-ispell`, this works outside of the [default Emacs ispell machinery](https://www.gnu.org/software/emacs/manual/html_node/emacs/Spelling.html).
 
 To get a sense of the difference, compare company-spell's minimalist [spellchecking function](https://github.com/enzuru/company-spell/blob/4866da9780ed8260734ec8f7fb3054a48c2bf297/company-spell.el#L36) with [that of Emacs ispell](https://github.com/emacs-mirror/emacs/blob/7055fd8e43eebab5ad27c665a941d0612da7f173/lisp/textmodes/ispell.el#L2507).
 
@@ -41,6 +43,8 @@ M-x package-install company-spell
 
 ### Configuration
 
+#### company-spell-command
+
 Optionally, set a spellchecker that isn't the default value of `aspell`:
 ```elisp
 (setf company-spell-command "hunspell")
@@ -48,7 +52,16 @@ Optionally, set a spellchecker that isn't the default value of `aspell`:
 (setf company-spell-command "ispell")
 ```
 
+#### comapny-spell-args
+
 You can further customize your results by setting custom args (only `-a` is enabled by default). For instance, search via "soundslike":
 ```elisp
 (setf company-spell-args "-a soundslike")
+```
+
+#### company-spell-filter
+
+You might want to setup your own filter. This is a simple function that takes in the results of your spellcheck command with its arguments, and turns it into a list for Company.
+```elisp
+(setf company-spell-filter #'my-filtering-function)
 ```
