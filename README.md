@@ -22,7 +22,11 @@ It will automatically run on any buffer that has a major mode derived from `text
 
 ### Preparation
 
-Ensure a terminal spellchecker is installed (`aspell`, `hunspell`, `ispell`, etc) and that you have access to [MELPA](https://melpa.org/#/getting-started).
+Ensure that:
+
+- A terminal spellchecker is installed (`aspell`, `hunspell`, `ispell`, etc)
+- You have setup access to [MELPA](https://melpa.org/#/getting-started)
+- [Company](http://company-mode.github.io) is installed
 
 ### Installation
 
@@ -65,3 +69,7 @@ You might want to setup your own function. This is a simple function that calls 
 ```elisp
 (setf company-spell-function #'my-custom-function)
 ```
+
+## License
+
+Licensed under the GPLv3; copyright is assigned to my eponymous nonprofit [enzu.ru](https://enzu.ru)
