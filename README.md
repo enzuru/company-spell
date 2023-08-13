@@ -12,7 +12,7 @@
 
 There are three variables you can modify to adjust how in buffer spellchecking works. This minimalist approach that keeps less machinery between you and your spellchecker, and allows you to cultivate your in buffer spellchecking with a different approach than spellchecking elsewhere.
 
-Due to this minimalist approach, multilingual support is probably not very good, as it currently does not track which language you are requesting spellcehcking for.
+Due to this minimalist approach, multilingual support is probably not very good, as it currently does not track which language you are requesting spellchecking for.
 
 I have not discovered any notable performance issues with this approach, and in fact, I have anecdotally found it to be faster than company-spell (no promises though!). aspell is the default because I find that it returns the best results.
 
