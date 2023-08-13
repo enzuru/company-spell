@@ -28,15 +28,15 @@
   :group 'company-spell
   :type 'string)
 
-(defcustom company-spell-function #'company-spell-lookup-words
-  "The function to call the spellchecker and turn the results into a list."
-  :group 'company-spell
-  :type 'function)
-
 (defcustom company-spell-args "-a"
   "A string of args to pass to your spellchecker."
   :group 'company-spell
   :type 'string)
+
+(defcustom company-spell-function #'company-spell-lookup-words
+  "The function to call the spellchecker and turn the results into a list."
+  :group 'company-spell
+  :type 'function)
 
 (defun company-spell-lookup-words (word)
   "Use a terminal spellchecker to lookup WORD."
