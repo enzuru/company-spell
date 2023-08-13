@@ -4,7 +4,7 @@
 
 ![A dropdown selection in Emacs with word suggestions](doc/example.gif)
 
-**If you are happy with company-ispell, this package is not for you, and you are encouraged to stick with company-ispell.**
+**If you are happy with `company-ispell`, this package is not for you, and you are encouraged to stick with company-ispell.**
 
 `company-spell` is a hackable minimalist framework for spellchecking.
 
@@ -14,7 +14,7 @@ There are three variables you can modify to adjust how in buffer spellchecking w
 
 Due to this minimalist approach, multilingual support is probably not very good yet, as it currently does not track which language you are requesting spellchecking for.
 
-I have not discovered any notable performance issues with this approach, and in fact, I have anecdotally found it to be faster than company-spell (no promises though!). aspell is the default because I find that it returns the best results.
+I have not discovered any notable performance issues with this approach, and in fact, I have anecdotally found it to be faster than `company-ispell` (no promises though!). aspell is the default because I find that it returns the best results.
 
 It will automatically run on any buffer that has a major mode derived from `text-mode`, which includes almost all modes meant for human writing.
 
