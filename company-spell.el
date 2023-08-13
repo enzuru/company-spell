@@ -12,7 +12,7 @@
 
 ;;; Commentary:
 
-;; A simple company backend that lets you use a terminal spellchecker
+;; A hackable minimalist framework for spellchecking
 
 ;;; Code:
 
