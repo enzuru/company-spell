@@ -38,6 +38,15 @@
   :group 'company-spell
   :type 'function)
 
+(defun company-spell--string-has-letters-p (string)
+  (let ((has-letter nil))
+    (mapc (lambda (char)
+            (if (memq (get-char-code-property char 'general-category)
+                      '(Ll Lu Lo Lt Lm Mn Mc Me Nl))
+                (setq has-letter t)))
+          (string-to-list string))
+    has-letter))
+
 (defun company-spell-lookup-words (word)
   "Use a terminal spellchecker to lookup WORD."
   (let* ((spell-command
@@ -50,8 +59,9 @@
            (shell-command-to-string spell-command) ",")))
     (setf (nth 0 results)
           (nth 0 (last (split-string (nth 0 results)))))
-    (let ((trimmed-results (cl-map 'list #'string-trim results)))
-      (if (not (string-equal (nth 0 trimmed-results) "*"))
+    (let* ((trimmed-results (cl-map 'list #'string-trim results))
+           (first-result (nth 0 trimmed-results)))
+      (if (company-spell--string-has-letters-p first-result)
           trimmed-results '()))))
 
 ;;;###autoload
