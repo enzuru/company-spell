@@ -72,4 +72,4 @@ You might want to setup your own function. This is a simple function that calls 
 
 ## License
 
-Licensed under the GPLv3; copyright is assigned to my eponymous nonprofit [enzu.ru](https://enzu.ru)
+Licensed under the GPLv3; copyright is assigned to my eponymous charity [enzu.ru](https://enzu.ru)
