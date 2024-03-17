@@ -70,6 +70,15 @@ You might want to setup your own function. This is a simple function that calls 
 (setf company-spell-function #'my-custom-function)
 ```
 
+### Using with Corfu and Cape
+
+I've started using [Corfu](https://github.com/minad/corfu) and [Cape](https://github.com/minad/cape) these days, which use `completion-at-point`. Thankfully, this package is easy to adapt to `completion-at-point`. With Cape installed, just write a hook like this for various text editing modes like `markdown-mode`:
+
+```elisp
+(setq-local completion-at-point-functions
+              (mapcar #'cape-company-to-capf (list #'company-spell)))
+```
+
 ## License
 
 Licensed under the GPLv3; copyright is assigned to my eponymous charity [enzu.ru](https://enzu.ru)
