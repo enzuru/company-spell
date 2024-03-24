@@ -56,7 +56,7 @@ Optionally, set a spellchecker that isn't the default value of `aspell`:
 (setf company-spell-command "ispell")
 ```
 
-#### comapny-spell-args
+#### company-spell-args
 
 You can further customize your results by setting custom args (only `-a` is enabled by default). For instance, search via "soundslike":
 ```elisp
