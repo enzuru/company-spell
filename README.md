@@ -78,7 +78,3 @@ I've started using [Corfu](https://github.com/minad/corfu) and [Cape](https://gi
 (setq-local completion-at-point-functions
               (mapcar #'cape-company-to-capf (list #'company-spell)))
 ```
-
-## License
-
-Licensed under the GPLv3; copyright is assigned to my eponymous charity [enzu.ru](https://enzu.ru)
